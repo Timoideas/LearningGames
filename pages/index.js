@@ -1,59 +1,33 @@
 import style from "styles/pages/index.module.css";
 import Head from "heads/main.head";
-import { Body, Section, SVG } from "components/timoideas/Timoideas.components";
-import Sockets from "components/timoideas/Sockets.component";
-import Timoideas from "public/svg/timoideas/timoideas.svg";
-import GitHub from "public/svg/global/github.svg";
-import { useState } from "react";
-import Analytics from "components/timoideas/Analytics.component";
-import AuthCard from "components/AuthCard.component";
-
-export default function Index() {
-  const [serverSockets, setserverSockets] = useState();
-
+import {
+  Section,
+  Body,
+  Content,
+} from "components/timoideas/Timoideas.components";
+import SopaDeLetras from "libraries/games/sopa_de_letras";
+export default function Page() {
   return (
     <>
       <Head />
       <Body>
-        <Analytics />
         <Section>
-          <AuthCard />
-          <div
-            className={`${style.Container} ${serverSockets && style.Sockets}`}
-          >
-            <SVG
-              heigth="5"
-              width="5"
-              icon={<Timoideas />}
-              className={style.Timoideas}
-            />
-            <h1>Timoideas</h1>
-            <a
-              className={style.Repo}
-              href="https://github.com/FernandoTimo/Backend-Express"
-              target="_blank"
-              type="clean"
-            >
-              <SVG
-                heigth="3"
-                width="3"
-                icon={<GitHub />}
-                className={style.GitHub}
-              />
-              <h2>Fullstack-Next</h2>
-            </a>
-          </div>
-          <Sockets state={[serverSockets, setserverSockets]} />
+          <Content center>
+            {SopaDeLetras({
+              palabras: ["hola", "pingüino", "estás"],
+              relleno: 2,
+            }).map((row, index) => (
+              <div key={index} className={style.row}>
+                {row.map((letter, index) => (
+                  <span key={index} className={style.letter}>
+                    {letter}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </Content>
         </Section>
       </Body>
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  return {
-    props: {
-      data: JSON.parse(JSON.stringify("data")),
-    },
-  };
 }
