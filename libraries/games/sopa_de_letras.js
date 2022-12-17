@@ -46,7 +46,11 @@ export default function SopaDeLetras({
   const size =
     words.reduce((a, b) => (a.length > b.length ? a : b)).length + relleno;
   // Signos gramaticales incluidos en las palabras: "ÁÜ"
-  const marksIncluded = words.join("").match(/[\u00C0-\u00FF]/g) || "";
+  const marksIncluded =
+    words
+      .join("")
+      .match(/[\u00C0-\u00FF]/g)
+      .join("") || "";
 
   // Función que genera una letra aleatoria
   const getRandomLetter = () => {
@@ -60,9 +64,5 @@ export default function SopaDeLetras({
       sopaDeLetras[i].push(getRandomLetter());
     }
   }
-  console.log("palabras: ", words);
-  console.log("tamañoDeLaSopaDeLetras: ", size);
-  console.log("incluyeSignos: ", marksIncluded);
-  console.log("sopaDeLetras: ", sopaDeLetras);
   return sopaDeLetras;
 }

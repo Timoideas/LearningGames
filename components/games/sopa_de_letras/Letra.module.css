@@ -1,0 +1,22 @@
+/* Phone */
+
+.Letter {
+  color: var(--c08);
+  background: var(--c00);
+  background: #033;
+  color: #00ff73;
+  border-radius: 5px;
+}
+.Letter:hover {
+  background: var(--c01);
+  cursor: pointer;
+}
+/* Tablet */
+@media (min-width: 576px) {
+}
+/* Laptop */
+@media (min-width: 768px) {
+}
+/* Desktop */
+@media (min-width: 1200px) {
+}

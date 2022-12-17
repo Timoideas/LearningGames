@@ -1,0 +1,40 @@
+/* Phone */
+.Container {
+  border-radius: 15px;
+  border: 2px solid var(--c03);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  width: 100%;
+  justify-items: center;
+  position: relative;
+}
+.Title {
+  position: absolute;
+  background: var(--c00);
+  padding: 3px 10px;
+  transform: translate(0%, -50%);
+  top: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 13px;
+  line-height: 13px;
+  color: var(--c08);
+}
+.Palabra {
+  justify-content: flex-start;
+  padding: 4px;
+  background: #7ec4ae;
+  border-radius: 8px;
+}
+/* Tablet */
+@media (min-width: 576px) {
+}
+/* Laptop */
+@media (min-width: 768px) {
+}
+/* Desktop */
+@media (min-width: 1200px) {
+}

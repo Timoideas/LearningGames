@@ -1,0 +1,21 @@
+/* Phone */
+.Container {
+  flex-direction: column;
+  border-radius: 15px;
+  background: var(--c02);
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+}
+.row {
+}
+
+/* Tablet */
+@media (min-width: 576px) {
+}
+/* Laptop */
+@media (min-width: 768px) {
+}
+/* Desktop */
+@media (min-width: 1200px) {
+}

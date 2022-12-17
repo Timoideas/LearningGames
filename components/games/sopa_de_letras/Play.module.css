@@ -1,6 +1,7 @@
 /* Phone */
 .Container {
-	
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Tablet */

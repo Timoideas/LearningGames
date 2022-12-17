@@ -5,7 +5,8 @@ import {
   Body,
   Content,
 } from "components/timoideas/Timoideas.components";
-import SopaDeLetras from "libraries/games/sopa_de_letras";
+import SopaDeLetras from "components/games/sopa_de_letras/Play.component";
+
 export default function Page() {
   return (
     <>
@@ -13,18 +14,7 @@ export default function Page() {
       <Body>
         <Section>
           <Content center>
-            {SopaDeLetras({
-              palabras: ["hola", "pingüino", "estás"],
-              relleno: 2,
-            }).map((row, index) => (
-              <div key={index} className={style.row}>
-                {row.map((letter, index) => (
-                  <span key={index} className={style.letter}>
-                    {letter}
-                  </span>
-                ))}
-              </div>
-            ))}
+            <SopaDeLetras />
           </Content>
         </Section>
       </Body>

@@ -37,6 +37,6 @@ export default function postUsage(pathname, query) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log("usage.fetch ->", data);
+      // console.log("usage.fetch ->", data);
     });
 }
