@@ -9,7 +9,15 @@
 }
 .row {
 }
-
+@media print {
+  .Container {
+    position: fixed;
+    transform: scale(1.5) translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border: 2px solid #fa0;
+  }
+}
 /* Tablet */
 @media (min-width: 576px) {
 }
